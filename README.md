@@ -45,3 +45,5 @@ curl --location --request PATCH 'localhost:8000/api/wallet' \
 --header 'Content-Type: application/x-www-form-urlencoded' \
 --data-urlencode 'is_disabled=true'
 ```
+
+If using Postman check the `x-www-form-urlencoded` in the body.
