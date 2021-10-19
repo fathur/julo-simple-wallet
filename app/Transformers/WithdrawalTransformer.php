@@ -6,8 +6,6 @@ use League\Fractal\TransformerAbstract;
 
 class WithdrawalTransformer extends TransactionTransformer
 {
-    
-    
     /**
      * A Fractal transformer.
      *

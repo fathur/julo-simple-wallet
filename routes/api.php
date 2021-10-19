@@ -26,8 +26,7 @@ use App\Http\Controllers\TransactionController;
 
 Route::post('init', [AuthenticationController::class, 'login']);
 
-Route::middleware('api')->group(function() {
-
+Route::middleware('api')->group(function () {
     Route::post('wallet', [WalletController::class, 'store']);
     Route::get('wallet', [WalletController::class, 'show']);
 

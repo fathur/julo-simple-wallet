@@ -14,7 +14,7 @@ class ExceptionTransformer extends TransformerAbstract
     protected $defaultIncludes = [
         //
     ];
-    
+
     /**
      * List of resources possible to include
      *
@@ -23,7 +23,7 @@ class ExceptionTransformer extends TransformerAbstract
     protected $availableIncludes = [
         //
     ];
-    
+
     /**
      * A Fractal transformer.
      *
@@ -31,14 +31,14 @@ class ExceptionTransformer extends TransformerAbstract
      */
     public function transform($exception)
     {
-        if($exception instanceof \Symfony\Component\HttpKernel\Exception\NotFoundHttpException) {
+        if ($exception instanceof \Symfony\Component\HttpKernel\Exception\NotFoundHttpException) {
             return [
                 'error' => 'Endpoint not found, please check again.'
 
             ];
         }
 
-        if($exception instanceof \Illuminate\Validation\ValidationException) {
+        if ($exception instanceof \Illuminate\Validation\ValidationException) {
             return [
                 'error' => $exception->errors()
             ];

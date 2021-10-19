@@ -16,16 +16,16 @@ class AuthenticateApi
      */
     public function handle(Request $request, Closure $next)
     {
-        if(is_null($request->header('Authorization'))) {
+        if (is_null($request->header('Authorization'))) {
             throw new \Exception('Need authentication.');
         }
 
         $user = auth()->user();
 
-        if(is_null($user)) {
+        if (is_null($user)) {
             throw new \Exception('Unauthorized.');
         }
-        
+
         return $next($request);
     }
 }

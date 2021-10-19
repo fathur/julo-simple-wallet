@@ -14,7 +14,7 @@ abstract class TransactionTransformer extends TransformerAbstract
     protected $defaultIncludes = [
         //
     ];
-    
+
     /**
      * List of resources possible to include
      *
@@ -23,10 +23,10 @@ abstract class TransactionTransformer extends TransformerAbstract
     protected $availableIncludes = [
         //
     ];
-    
+
     /**
      * A Fractal transformer.
-     * 
+     *
      * Transaction|Deposit|Withdrawal $transaction
      *
      * @return array

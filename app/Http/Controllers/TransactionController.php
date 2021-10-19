@@ -25,11 +25,11 @@ class TransactionController extends Controller
 
         $wallet = $user->wallet;
 
-        if(is_null($wallet)) {
+        if (is_null($wallet)) {
             throw new \Exception('This customer does not has wallet');
         }
 
-        if($wallet->isDisabled()) {
+        if ($wallet->isDisabled()) {
             throw new \Exception('This customer does not has active wallet');
         }
 
@@ -56,17 +56,17 @@ class TransactionController extends Controller
 
         $wallet = $user->wallet;
 
-        if(is_null($wallet)) {
+        if (is_null($wallet)) {
             throw new \Exception('This customer does not has wallet');
         }
 
-        if($wallet->isDisabled()) {
+        if ($wallet->isDisabled()) {
             throw new \Exception('This customer does not has active wallet');
         }
 
         $amount = ((int) $request->get('amount')) * -1;
 
-        if($amount > $wallet->balance) {
+        if ($amount > $wallet->balance) {
             throw new \Exception('The amount must not be more than the current balance');
         }
 

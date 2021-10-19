@@ -13,7 +13,7 @@ class Deposit extends Transaction
     protected static function booted()
     {
         parent::booted();
-        
+
         static::addGlobalScope('type', function (Builder $builder) {
             $builder->where('amount', '>', 0);
         });

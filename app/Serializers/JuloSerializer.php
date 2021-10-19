@@ -16,7 +16,6 @@ class JuloSerializer extends ArraySerializer
      */
     public function collection($resourceKey, array $data)
     {
-
         return [
             'data' => $data,
         ];
@@ -49,7 +48,7 @@ class JuloSerializer extends ArraySerializer
 
     public function meta(array $meta)
     {
-        if(!array_key_exists('status', $meta)) {
+        if (!array_key_exists('status', $meta)) {
             $meta = array_merge($meta, [
                 'status' => 'success'
             ]);

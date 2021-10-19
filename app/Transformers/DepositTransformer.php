@@ -6,7 +6,6 @@ use League\Fractal\TransformerAbstract;
 
 class DepositTransformer extends TransactionTransformer
 {
-
     /**
      * A Fractal transformer.
      *

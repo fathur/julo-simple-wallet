@@ -40,7 +40,6 @@ class Handler extends ExceptionHandler
         });
 
         $this->renderRenderable();
-        
     }
 
     protected function fractalException($e, $statusCode = 400)
@@ -52,17 +51,17 @@ class Handler extends ExceptionHandler
             ->respond($statusCode);
     }
 
-    protected function renderRenderable() {
-
-        $this->renderable(function(\Symfony\Component\HttpKernel\Exception\NotFoundHttpException $e, $request) {
+    protected function renderRenderable()
+    {
+        $this->renderable(function (\Symfony\Component\HttpKernel\Exception\NotFoundHttpException $e, $request) {
             return $this->fractalException($e, 404);
         });
 
-        $this->renderable(function(\Illuminate\Validation\ValidationException $e, $request) {
+        $this->renderable(function (\Illuminate\Validation\ValidationException $e, $request) {
             return $this->fractalException($e);
         });
 
-        $this->renderable(function(\Exception $e, $request) {
+        $this->renderable(function (\Exception $e, $request) {
             return $this->fractalException($e);
         });
     }

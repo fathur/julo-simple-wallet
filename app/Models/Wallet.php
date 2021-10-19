@@ -8,7 +8,8 @@ use App\Traits\Uuid;
 
 class Wallet extends Model
 {
-    use HasFactory, Uuid;
+    use HasFactory;
+    use Uuid;
 
 
     protected $fillable = ['enabled_at', 'disabled_at', 'balance'];
@@ -44,7 +45,7 @@ class Wallet extends Model
         $enabledAt = $this->enabled_at;
         $disabledAt = $this->disabled_at;
 
-        if(is_null($enabledAt) && is_null($disabledAt)) {
+        if (is_null($enabledAt) && is_null($disabledAt)) {
             return 'disabled';
         }
 
@@ -56,11 +57,11 @@ class Wallet extends Model
             return 'disabled';
         }
 
-        if($enabledAt->gt($disabledAt)) {
+        if ($enabledAt->gt($disabledAt)) {
             return 'enabled';
         }
 
-        if($disabledAt->gt($enabledAt)) {
+        if ($disabledAt->gt($enabledAt)) {
             return 'disabled';
         }
     }

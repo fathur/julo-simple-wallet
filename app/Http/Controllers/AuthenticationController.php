@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use App\Transformers\AuthenticationTransformer;
 
 use App\Http\Requests\AuthenticationRequest as Request;

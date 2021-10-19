@@ -9,7 +9,8 @@ use function Illuminate\Events\queueable;
 
 class Transaction extends Model
 {
-    use HasFactory, Uuid;
+    use HasFactory;
+    use Uuid;
 
     protected $fillable = ['transaction_actor_id', 'amount', 'reference_id', 'status'];
 
